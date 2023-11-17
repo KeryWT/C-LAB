@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/A3.dir/lezioniC/esA3/A3.c.o -o A3 

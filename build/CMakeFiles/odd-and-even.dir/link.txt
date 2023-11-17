@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/odd-and-even.dir/unix/lez2/odd-and-even.c.o -o odd-and-even 
