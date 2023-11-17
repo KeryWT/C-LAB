@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/A9.dir/lezioniC/esA9/list_cl.c.o CMakeFiles/A9.dir/lezioniC/esA9/address.c.o CMakeFiles/A9.dir/lezioniC/esA9/list_of_clients.c.o CMakeFiles/A9.dir/lezioniC/esA9/client.c.o -o A9 

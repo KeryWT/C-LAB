@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/A4.dir/lezioniC/esA4/A4.c.o -o A4 

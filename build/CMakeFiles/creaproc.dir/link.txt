@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/creaproc.dir/unix/lez4/creaproc.c.o -o creaproc 

@@ -1,0 +1,168 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "C_Lab",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "A1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A1-Debug-7ecef645dae52a63cf72.json",
+					"name" : "A1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A2-Debug-f1123f9796bc6b037abc.json",
+					"name" : "A2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A3-Debug-775f67ff80b227ffccdf.json",
+					"name" : "A3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A4-Debug-dae6c49bfda3326676d3.json",
+					"name" : "A4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A5-Debug-ffd30e224f56769091e1.json",
+					"name" : "A5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A9::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A9-Debug-7c31cbd0845ae186e91d.json",
+					"name" : "A9",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "creaproc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-creaproc-Debug-d4c9f797f9603a0db23b.json",
+					"name" : "creaproc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "es1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-es1-Debug-29cfa511c014a53dfbe8.json",
+					"name" : "es1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "filter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-filter-Debug-031d6003dfd7f77c223e.json",
+					"name" : "filter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lavagna::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lavagna-Debug-7d77093ce278b948f588.json",
+					"name" : "lavagna",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_pipe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_pipe-Debug-9473a8d4b92430430708.json",
+					"name" : "main_pipe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "odd-and-even::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-odd-and-even-Debug-be5eb5d25121970fedcb.json",
+					"name" : "odd-and-even",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testOrdinaArray::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testOrdinaArray-Debug-4b602c03ff4da5a52f5a.json",
+					"name" : "testOrdinaArray",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/luca/repos/workspaces/C-LAB/build",
+		"source" : "/home/luca/repos/workspaces/C-LAB"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
