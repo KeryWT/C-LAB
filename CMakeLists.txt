@@ -14,3 +14,5 @@ add_executable(odd-and-even unix/lez2/odd-and-even.c)
 add_executable(testOrdinaArray unix/lez2/testOrdinaArray.c)
 add_executable(es1 unix/lez3/es1.c)
 add_executable(creaproc unix/lez4/creaproc.c)
+add_executable(main_pipe unix/PIPE/main_pipe.c
+        unix/PIPE/filter.c)
