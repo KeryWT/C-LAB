@@ -1,0 +1,15 @@
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/A5.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/A1.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/A2.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/A3.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/A4.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/A9.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/lavagna.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/odd-and-even.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/testOrdinaArray.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/es1.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/creaproc.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/main_pipe.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/filter.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/edit_cache.dir
+/Users/luca/Documents/UniTo/Anno 2/SO/C-LAB/build/CMakeFiles/rebuild_cache.dir
