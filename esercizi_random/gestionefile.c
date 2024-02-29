@@ -1,10 +1,11 @@
-#include "stdio.h"
-#include "unistd.h"
+#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <sys/types.h>
+
 int main() {
   // apri un file di testo in scrittura
   FILE *f = fopen("test.txt", "w");
-
   pid_t pid = fork();
   if (pid == -1) {
     printf("Errore nella creazione del processo figlio\n");
