@@ -24,30 +24,35 @@ int main(int argc, char *argv[])
     exit(1);
   }
 
-  int children_num = atoi(argv[1]);              // Number of children
-  srand(time(NULL));                             // Seed for random number generator
-  int random_value = rand() % atoi(argv[2]) + 1; // Generate random number between 1 and max_number
+  pid_t child_pid;
+  int status, children_num, number;
 
-  key_t key = ftok("hot-potato-msg.c", 65);
-  if (key == -1)
+  if ((children_num = strtol(argv[1], NULL, 10)) <= 0)
   {
-    perror("ftok");
+    fprintf(stderr, "Unable to read <num_procs> from argv[1]\n");
+    exit(1);
+  }
+  if ((number = strtol(argv[2], NULL, 10)) <= 0)
+  {
+    fprintf(stderr, "Unable to read <init_range> from argv[2]\n");
     exit(1);
   }
 
-  int msg_id = msgget(key, 0666 | IPC_CREAT);
+  /* Create message queue */
+  int msg_id = msgget(IPC_PRIVATE, 0600);
   if (msg_id == -1)
   {
     perror("msgget");
     exit(1);
   }
 
-  //send first message
+  /* Init the sequence */
+  srand(getpid());
   message.msg_type = 1;
-  message.msg_value = random_value;
-  msgsnd(msg_id, &message, sizeof(message), 0);
+  message.msg_value = rand() % number + 1;
+  msgsnd(msg_id, &message, sizeof(message) - sizeof(long), 0);
 
-  for (int i = 0; i < children_num; i++)
+  for (int i = 1; i <= children_num; i++)
   { // Create children
     pid_t pid = fork();
     if (pid == -1)
@@ -55,24 +60,25 @@ int main(int argc, char *argv[])
       perror("fork");
       exit(1);
     }
-    else if (pid == 0)
-    { // Child
-      while (1)
+    else if (pid == 0) // Child
+    {
+      srand(getpid()); /* Initialize a different seed per child */
+      while (1)        /* Loop forever: terminated by SIGALRM */
       {
-        alarm(1); // Set alarm to 1 second
+        alarm(1); /* Set alarm to 1 second */
 
-        // Receive message
-        msgrcv(msg_id, &message, sizeof(message), message.msg_type, 0);
+        /* Receive message */
+        msgrcv(msg_id, &message, sizeof(message) - sizeof(long), i, 0);
 
-        // Handle the message
+        /* Handle the message */
         if (message.msg_value == 0)
-        { // Child terminates
-          printf("Child process terminated: PID %d\n", getpid());
-          exit(0);
+        { /* Child terminates */
+          printf("PID=%d (CHILD %d): received 0, TERMINATING\n", getpid(), i);
+          exit(i);
         }
         else
         { // Send message to next child
-          printf("Child process PID %d received message with value %d\n", getpid(), message.msg_value);
+          printf("PID=%d (CHILD %d): received %d, ", getpid(), i, message.msg_value);
           // Change message type to next child or 1 if it is the last child
           message.msg_type = (message.msg_type == children_num) ? 1 : message.msg_type + 1;
 
@@ -80,21 +86,22 @@ int main(int argc, char *argv[])
           message.msg_value = (rand() % 2 == 0) ? message.msg_value : message.msg_value - 1;
 
           printf("sent %d\n", message.msg_value);
-          msgsnd(msg_id, &message, sizeof(message), 0);
+          msgsnd(msg_id, &message, sizeof(message) - sizeof(long), 0);
         }
       }
     }
   }
-  pid_t child_pid;
-  int status;
-	/* Wait for the child processes termination */
-	while ((child_pid = wait(&status)) != -1) {
-		printf("PID= %5d (PARENT): Child with PID=%d terminated with status 0x%04X\n",
-		       getpid(), child_pid, status);
-	}
-	if (errno != ECHILD) {
-		fprintf(stderr,"wait returned -1, but NOT ECHILD... Need to be investigated\n");
-	}
+
+  /* Wait for the child processes termination */
+  while ((child_pid = wait(&status)) != -1)
+  {
+    printf("PID= %5d (PARENT): Child with PID=%d terminated with status 0x%04X\n",
+           getpid(), child_pid, status);
+  }
+  if (errno != ECHILD)
+  {
+    fprintf(stderr, "wait returned -1, but NOT ECHILD... Need to be investigated\n");
+  }
 
   // Remove message queue after all children have terminated
   msgctl(msg_id, IPC_RMID, 0);
