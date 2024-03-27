@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <time.h>
+#include <sys/wait.h> // needed on linux, but not on MacOS.
 
 #define MAX_MSG_SIZE 100
 
